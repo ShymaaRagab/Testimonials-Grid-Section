@@ -80,6 +80,7 @@ h5 {
 .third {
   grid-area: three;
   color: hsl(219, 29%, 14%);
+  background-color: #fff;
 }
 .fourth {
   grid-area: four;
@@ -89,6 +90,7 @@ h5 {
 .fifth {
   grid-area: five;
   color: hsl(219, 29%, 14%);
+  background-color: #fff;
 }
 
 @media screen and (max-width: 1280px) {
