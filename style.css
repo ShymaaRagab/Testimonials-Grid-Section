@@ -1,0 +1,116 @@
+/* content: "\201C"; Unicode for the left double quotation mark “ */
+/*font family used for “ style in section 1 */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(210, 46%, 95%);
+  font-size: 13px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+main {
+  display: grid;
+  margin: 6rem 13rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 2fr);
+  grid-template-areas:
+    "one one two five"
+    "three four four five";
+  gap: 2rem;
+}
+section {
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: hsl(0, 0%, 81%) 0 0 7px 0;
+}
+h5 {
+  opacity: 50%;
+}
+.reviewParagraphs {
+  opacity: 70%;
+  margin-top: 15px;
+}
+.highlightParagraph {
+  font-size: 20px;
+}
+.auther {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.auther img {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+.first {
+  grid-area: one;
+  background-color: hsl(263, 55%, 52%);
+  color: #fff;
+  position: relative;
+  z-index: 100;
+}
+.first img,
+.fourth img {
+  border: 2px solid hsl(263, 100%, 67%);
+}
+.first::before {
+  content: "\201C";
+  position: absolute;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 500px;
+  color: hsl(263, 56%, 65%);
+  bottom: -225px;
+  right: 20px;
+  z-index: -1;
+}
+.second {
+  grid-area: two;
+  background-color: hsl(217, 19%, 35%);
+  color: #fff;
+}
+.third {
+  grid-area: three;
+  color: hsl(219, 29%, 14%);
+}
+.fourth {
+  grid-area: four;
+  background-color: hsl(219, 29%, 14%);
+  color: #fff;
+}
+.fifth {
+  grid-area: five;
+  color: hsl(219, 29%, 14%);
+}
+
+@media screen and (max-width: 1280px) {
+  main {
+    margin: 6rem 0;
+  }
+}
+@media screen and (max-width: 1000px) {
+  main {
+    margin: 6rem 1.5rem;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+      "one one one one" "two two two two"
+      "three three three three" "four four four four" "five five five five";
+  }
+  .first::before {
+    bottom: -270px;
+  }
+}
+@media screen and (max-width: 376px) {
+  .first::before {
+    bottom: -95px;
+    right: -25px;
+  }
+}
